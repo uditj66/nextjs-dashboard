@@ -1,0 +1,8 @@
+/*CSS Modules allow you to scope CSS to a component by automatically creating unique class names, so you don't have to worry about style collisions as well. */
+.shape {
+    height: 0;
+    width: 0;
+    border-bottom: 30px solid black;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  }
