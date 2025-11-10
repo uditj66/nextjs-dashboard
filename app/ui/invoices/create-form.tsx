@@ -1,16 +1,17 @@
-import { CustomerField } from '@/app/lib/definitions';
-import Link from 'next/link';
+import { CustomerField } from "@/app/lib/definitions";
+import Link from "next/link";
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-} from '@heroicons/react/24/outline';
-import { Button } from '@/app/ui/button';
+} from "@heroicons/react/24/outline";
+import { Button } from "@/app/ui/button";
+import { createInvoice } from "@/app/lib/action";
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   return (
-    <form>
+    <form action={createInvoice}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
@@ -20,7 +21,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           <div className="relative">
             <select
               id="customer"
-              name="customerId"
+              name="customerId" //name attribute is used to get the value of the selected field whereas htmlfor and id should be same to connecteach other
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               defaultValue=""
             >
@@ -69,7 +70,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   id="pending"
                   name="status"
                   type="radio"
-                  value="pending"
+                  value="pending" //value stored in database Case-sensitive
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
@@ -84,7 +85,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   id="paid"
                   name="status"
                   type="radio"
-                  value="paid"
+                  value="paid" //value stored in database Case-sensitive
                   className="h-4 w-4 cursor-pointer border-gray-300 bg-gray-100 text-gray-600 focus:ring-2"
                 />
                 <label
