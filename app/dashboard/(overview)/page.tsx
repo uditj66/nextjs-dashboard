@@ -9,11 +9,8 @@ import {
   RevenueChartSkeleton,
   CardSkeleton,
 } from "@/app/ui/skeletons";
-import { fetchRevenue, fetchLatestInvoices } from "@/app/lib/data";
 import CardWrapper from "@/app/ui/dashboard/cards";
 export default async function Page() {
-  // const revenue = await fetchRevenue();
-  // const latestInvoices = await fetchLatestInvoices();
   const {
     totalPaidInvoices,
     numberOfCustomers,
