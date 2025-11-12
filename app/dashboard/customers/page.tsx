@@ -1,5 +1,9 @@
-const customers = () => {
-  return <div>customers</div>;
-};
+import React from 'react'
 
-export default customers;
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
