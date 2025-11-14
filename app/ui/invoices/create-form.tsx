@@ -10,8 +10,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { Button } from "@/app/ui/button";
 import { createInvoice, State } from "@/app/lib/action";
-
-
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = {
     errors: {},
@@ -19,7 +17,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
   };
   const [state, formAction] = useActionState(createInvoice, initialState);
   console.log(state);
-  
+
   return (
     <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -127,7 +125,12 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               </div>
             </div>
           </div>
-          <div className="mt-2 text-sm text-red-500" id="status-error" aria-atomic="true" aria-live="polite">
+          <div
+            className="mt-2 text-sm text-red-500"
+            id="status-error"
+            aria-atomic="true"
+            aria-live="polite"
+          >
             {state.errors?.status &&
               state.errors.status.map((error: string) => (
                 <p key={error}>{error}</p>
@@ -144,7 +147,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         </Link>
         <Button type="submit">Create Invoice</Button>
       </div>
-        <div className="mt-2 text-red-500 ">{state.message}</div>
+      <div className="mt-2 text-red-500 ">{state.message}</div>
     </form>
   );
 }
